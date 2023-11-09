@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "d5430e17-0aa3-4d3a-a8dd-156da991148d",
+		"name": "API documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31049504"
+	},
+	"item": [
+		{
+			"name": "get list of weather",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/weather/index",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"weather",
+						"index"
+					]
+				},
+				"description": "get list of weather"
+			},
+			"response": [
+				{
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/weather/index",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"weather",
+								"index"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": {
+								"content": "",
+								"type": "text/plain"
+							}
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 16,\n                \"coordinates_id\": 1,\n                \"value\": {\n                    \"temp\": 7.65,\n                    \"feels_like\": 5.11,\n                    \"temp_min\": 5.35,\n                    \"temp_max\": 8.72,\n                    \"pressure\": 1008,\n                    \"humidity\": 85\n                },\n                \"created_at\": \"2023-11-09T11:26:34.000000Z\",\n                \"updated_at\": \"2023-11-09T11:26:34.000000Z\"\n            },\n            {\n                \"id\": 15,\n                \"coordinates_id\": 1,\n                \"value\": {\n                    \"temp\": 7.65,\n                    \"feels_like\": 5.11,\n                    \"temp_min\": 5.35,\n                    \"temp_max\": 8.72,\n                    \"pressure\": 1008,\n                    \"humidity\": 85\n                },\n                \"created_at\": \"2023-11-09T11:20:51.000000Z\",\n                \"updated_at\": \"2023-11-09T11:20:51.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"coordinates_id\": 1,\n                \"value\": {\n                    \"temp\": 7.58,\n                    \"feels_like\": 5.03,\n                    \"temp_min\": 5.35,\n                    \"temp_max\": 8.72,\n                    \"pressure\": 1008,\n                    \"humidity\": 87\n                },\n                \"created_at\": \"2023-11-09T09:51:14.000000Z\",\n                \"updated_at\": \"2023-11-09T09:51:14.000000Z\"\n            },\n            {\n                \"id\": 1,\n                \"coordinates_id\": 1,\n                \"value\": {\n                    \"temp\": 7.58,\n                    \"feels_like\": 5.03,\n                    \"temp_min\": 5.35,\n                    \"temp_max\": 8.72,\n                    \"pressure\": 1008,\n                    \"humidity\": 87\n                },\n                \"created_at\": \"2023-11-09T09:44:07.000000Z\",\n                \"updated_at\": \"2023-11-09T09:44:07.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/weather/index?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8000/api/weather/index?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/weather/index?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/weather/index\",\n        \"per_page\": 15,\n        \"prev_page_url\": null,\n        \"to\": 4,\n        \"total\": 4\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "update weather",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/weather/update-default",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"weather",
+						"update-default"
+					]
+				},
+				"description": "Add new weather item"
+			},
+			"response": [
+				{
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/weather/update-default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"weather",
+								"update-default"
+							],
+							"query": [
+								{
+									"key": "workspace",
+									"value": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
+									"description": "Optional. A workspace ID in which to create the collection.\n\nIf you do not include this query parameter, the system creates the collection in your \"My Workspace\" workspace.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": {
+								"content": "",
+								"type": "text/plain"
+							}
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"coordinates_id\": 1,\n        \"value\": {\n            \"temp\": 7.96,\n            \"feels_like\": 5.5,\n            \"temp_min\": 5.91,\n            \"temp_max\": 8.76,\n            \"pressure\": 1008,\n            \"humidity\": 81\n        },\n        \"updated_at\": \"2023-11-09T11:53:08.000000Z\",\n        \"created_at\": \"2023-11-09T11:53:08.000000Z\",\n        \"id\": 17\n    }\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-API-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://farming-simulator.pstmn.io"
+		}
+	]
+}
