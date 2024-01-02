@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Http;
 use App\Models\Coordinate;
+use App\Contracts\WeatherInterface;
 
 /**
  * Class Weather
@@ -47,22 +48,14 @@ class Weather extends Model
 	 *
 	 * @return Weather
 	 */
-	public static function storeDataFromApi(Coordinate $coordinate) : Weather
+	public static function storeFromApi(Coordinate $coordinate, WeatherInterface $provider) : Weather
 	{
-		$key = env('WEATHER_KEY');
-		$response = Http::get('https://api.openweathermap.org/data/2.5/weather', [
-			'lat' => $coordinate->lat,
-			'lon' => $coordinate->lon,
-			'appid' => $key,
-			'exclude' => 'current',
-			'units' => 'metric'
-		]);
+		$response = $provider->get($coordinate);
 		$weather = new Self;
 		if ($response->ok()) {
 			$weather->coordinates_id = $coordinate->id;
 			$weather->value = $response->body();
 			$weather->save();
-
 		}
 		return $weather;
 	}

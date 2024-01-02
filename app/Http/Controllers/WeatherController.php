@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreWeatherRequest;
 use App\Models\Weather;
 use App\Http\Resources\WeatherResource;
+use App\Http\Resources\WeatherResourceCollection;
 use Illuminate\Http\JsonResponse;
 use App\Models\Coordinate;
+use App\Services\WeatherDefault;
 
 class WeatherController extends Controller
 {
@@ -16,7 +17,7 @@ class WeatherController extends Controller
      */
     public function index(): JsonResponse
     {
-        return response()->json(['success' => true, 'data' => new WeatherResource(Weather::orderByDesc('created_at')->paginate())]);
+        return response()->json(['success' => true, 'data' => new WeatherResourceCollection(Weather::orderByDesc('created_at')->paginate())]);
     }
 
     /**
@@ -25,7 +26,7 @@ class WeatherController extends Controller
     public function updateDefault(): JsonResponse
     {
         $coordinates = Coordinate::firstOrCreate(Coordinate::DEFAULT);
-        $weather = Weather::storeDataFromApi($coordinates);
+        $weather = Weather::storeFromApi($coordinates, new WeatherDefault);
         return response()->json(['success' => true, 'data' => new WeatherResource($weather)]);
     }
 }
